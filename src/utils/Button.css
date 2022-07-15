@@ -1,0 +1,41 @@
+.utils-btn {
+  height: 2rem;
+  width: 5rem;
+  border: none;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-arrow {
+  color: orange;
+  font-size: 3rem;
+}
+
+#left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+#right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+}
+
+#up {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(0);
+}
+
+#down {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+}
