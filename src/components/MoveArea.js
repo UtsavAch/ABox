@@ -5,6 +5,7 @@ import Box from "./Box";
 import "./MoveArea.css";
 
 const MoveArea = () => {
+  const [startGame, setStartGame] = useState(false);
   const [showDirection, setShowDirection] = useState("");
 
   const onClickHandler = (event) => {
@@ -19,11 +20,17 @@ const MoveArea = () => {
     <div className="move-area-container">
       <div className="move-area">
         <Box
+          startGame={startGame}
           direction={showDirection}
+          setDirection={setShowDirection}
           onResetDirection={resetDirectionHandler}
         />
       </div>
-      <ButtonControl onClick={onClickHandler} />
+      <ButtonControl
+        onClick={onClickHandler}
+        startGame={startGame}
+        onStartGame={setStartGame}
+      />
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import KeyboardControl from "../helpers/KeyboardControl";
 import "./Box.css";
 
 const Box = (props) => {
@@ -8,13 +9,17 @@ const Box = (props) => {
   const moveAreaSize = boxRef.current && boxRef.current.parentNode.clientWidth;
 
   useEffect(() => {
+    props.startGame && KeyboardControl(props.setDirection);
+  }, [props.setDirection, props.startGame]);
+
+  useEffect(() => {
     if (props.direction === "left") {
       setPosition((prevPosition) => {
         return {
           ...prevPosition,
           horizontal:
             prevPosition.horizontal <= 0
-              ? prevPosition.horizontal
+              ? moveAreaSize / boxSize - 1
               : prevPosition.horizontal - 1,
         };
       });
@@ -25,7 +30,7 @@ const Box = (props) => {
           ...prevPosition,
           horizontal:
             prevPosition.horizontal >= moveAreaSize / boxSize - 1
-              ? prevPosition.horizontal
+              ? 0
               : prevPosition.horizontal + 1,
         };
       });
@@ -36,7 +41,7 @@ const Box = (props) => {
           ...prevPosition,
           vertical:
             prevPosition.vertical <= 0
-              ? prevPosition.vertical
+              ? moveAreaSize / boxSize - 1
               : prevPosition.vertical - 1,
         };
       });
@@ -47,7 +52,7 @@ const Box = (props) => {
           ...prevPosition,
           vertical:
             prevPosition.vertical >= moveAreaSize / boxSize - 1
-              ? prevPosition.vertical
+              ? 0
               : prevPosition.vertical + 1,
         };
       });
