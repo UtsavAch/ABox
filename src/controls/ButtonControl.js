@@ -14,10 +14,10 @@ const ButtonControl = (props) => {
     <div className="buttons-container">
       {props.startGame && (
         <React.Fragment>
-          <Button id="left" onClick={props.onClick} />
-          <Button id="right" onClick={props.onClick} />
-          <Button id="up" onClick={props.onClick} />
-          <Button id="down" onClick={props.onClick} />
+          <Button id="left" onSetShowDirection={props.onSetShowDirection} />
+          <Button id="right" onSetShowDirection={props.onSetShowDirection} />
+          <Button id="up" onSetShowDirection={props.onSetShowDirection} />
+          <Button id="down" onSetShowDirection={props.onSetShowDirection} />
         </React.Fragment>
       )}
       <CentralButton

@@ -8,10 +8,6 @@ const MoveArea = () => {
   const [startGame, setStartGame] = useState(false);
   const [showDirection, setShowDirection] = useState("");
 
-  const onClickHandler = (event) => {
-    setShowDirection(event.target.closest("button").id);
-  };
-
   const resetDirectionHandler = () => {
     setShowDirection("");
   };
@@ -28,9 +24,9 @@ const MoveArea = () => {
         />
       </div>
       <ButtonControl
-        onClick={onClickHandler}
         startGame={startGame}
         onStartGame={setStartGame}
+        onSetShowDirection={setShowDirection}
       />
     </div>
   );
