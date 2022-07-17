@@ -1,5 +1,8 @@
 import { useRef, useState, useEffect } from "react";
-import KeyboardControl from "../helpers/KeyboardControl";
+import {
+  keyboardControl,
+  keyboardSpaceControl,
+} from "../helpers/KeyboardControl";
 import "./Box.css";
 
 const Box = (props) => {
@@ -9,10 +12,15 @@ const Box = (props) => {
   const moveAreaSize = boxRef.current && boxRef.current.parentNode.clientWidth;
 
   useEffect(() => {
-    props.startGame && KeyboardControl(props.setDirection);
-  }, [props.setDirection, props.startGame]);
+    keyboardControl(props.setDirection);
+  }, [props.setDirection]);
 
   useEffect(() => {
+    keyboardSpaceControl(props.onStartGame);
+  }, [props.onStartGame]);
+
+  useEffect(() => {
+    if (!props.startGame) return;
     if (props.direction === "left") {
       setPosition((prevPosition) => {
         return {

@@ -21,6 +21,7 @@ const MoveArea = () => {
       <div className="move-area">
         <Box
           startGame={startGame}
+          onStartGame={setStartGame}
           direction={showDirection}
           setDirection={setShowDirection}
           onResetDirection={resetDirectionHandler}

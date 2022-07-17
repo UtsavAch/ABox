@@ -1,4 +1,4 @@
-const KeyboardControl = (fn) => {
+const keyboardControl = (fn) => {
   window.addEventListener("keydown", function (event) {
     event.preventDefault();
     if (event.key === "ArrowDown") {
@@ -15,4 +15,15 @@ const KeyboardControl = (fn) => {
   });
 };
 
-export default KeyboardControl;
+const keyboardSpaceControl = (fn) => {
+  window.addEventListener("keyup", function (event) {
+    event.preventDefault();
+    if (event.key === " ") {
+      fn((prevState) => !prevState);
+    } else {
+      return;
+    }
+  });
+};
+
+module.exports = { keyboardControl, keyboardSpaceControl };
