@@ -2,6 +2,7 @@ import { useState } from "react";
 import ButtonControl from "../main-game-controls/ButtonControl";
 
 import Box from "./Box";
+import CountDown from "./CountDown";
 import "./MoveArea.css";
 
 const MoveArea = () => {
@@ -22,6 +23,7 @@ const MoveArea = () => {
           setDirection={setShowDirection}
           onResetDirection={resetDirectionHandler}
         />
+        {startGame && <CountDown />}
       </div>
       <ButtonControl
         startGame={startGame}

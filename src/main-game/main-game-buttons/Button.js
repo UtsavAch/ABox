@@ -9,7 +9,7 @@ const Button = (props) => {
     setMoveBoxInterval(
       setInterval(() => {
         props.onSetShowDirection(event.target.closest("button").id);
-      }, 100)
+      }, 75)
     );
   };
 

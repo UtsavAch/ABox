@@ -13,6 +13,6 @@
 }
 
 .central-button-icon {
-  color: orange;
+  color: var(--primary-orange);
   font-size: 3rem;
 }
