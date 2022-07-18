@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import {
   keyboardControl,
   keyboardSpaceControl,
-} from "../helpers/KeyboardControl";
+} from "../main-game-helpers/KeyboardControl";
 import "./Box.css";
 
 const Box = (props) => {

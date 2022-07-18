@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ButtonControl from "../controls/ButtonControl";
+import ButtonControl from "../main-game-controls/ButtonControl";
 
 import Box from "./Box";
 import "./MoveArea.css";

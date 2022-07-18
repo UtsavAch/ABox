@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../utils/Button";
+import Button from "../main-game-buttons/Button";
 import CentralButton from "./CentralButton";
 import "./ButtonControl.css";
 

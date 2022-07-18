@@ -1,4 +1,4 @@
-import MoveArea from "./components/MoveArea";
+import MoveArea from "./main-game/main-game-components/MoveArea";
 import "./App.css";
 
 function App() {
