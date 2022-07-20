@@ -21,7 +21,7 @@ const Box = (props) => {
 
   useEffect(() => {
     if (!props.startGame) return;
-    if (props.direction === "left") {
+    if (!props.isCountingDown && props.direction === "left") {
       setPosition((prevPosition) => {
         return {
           ...prevPosition,
@@ -32,7 +32,7 @@ const Box = (props) => {
         };
       });
     }
-    if (props.direction === "right") {
+    if (!props.isCountingDown && props.direction === "right") {
       setPosition((prevPosition) => {
         return {
           ...prevPosition,
@@ -43,7 +43,7 @@ const Box = (props) => {
         };
       });
     }
-    if (props.direction === "up") {
+    if (!props.isCountingDown && props.direction === "up") {
       setPosition((prevPosition) => {
         return {
           ...prevPosition,
@@ -54,7 +54,7 @@ const Box = (props) => {
         };
       });
     }
-    if (props.direction === "down") {
+    if (!props.isCountingDown && props.direction === "down") {
       setPosition((prevPosition) => {
         return {
           ...prevPosition,

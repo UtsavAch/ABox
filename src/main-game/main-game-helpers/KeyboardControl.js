@@ -16,7 +16,7 @@ const keyboardControl = (fn) => {
 };
 
 const keyboardSpaceControl = (fn) => {
-  window.addEventListener("keyup", function (event) {
+  window.addEventListener("keydown", function (event) {
     event.preventDefault();
     if (event.key === " ") {
       fn((prevState) => !prevState);
